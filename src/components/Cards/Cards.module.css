@@ -1,0 +1,55 @@
+.container {
+  margin: 50px 0;
+  justify-content: center;
+  display: flex;
+}
+
+.card {
+  position: relative;
+  margin: 0 2% !important;
+  margin-bottom: 20px !important;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5) !important;
+  z-index: 1;
+}
+.card::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 120%;
+  z-index: 2;
+  transform: rotate(20deg);
+  left: -100%;
+  transition: 0.6s;
+  top: -10%;
+}
+.card:hover::before {
+  left: 100%;
+}
+
+.infected {
+  border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+}
+.infected::before {
+  border-left: 15px solid rgba(0, 0, 255, 0.2);
+  border-right: 15px solid rgba(0, 0, 255, 0.2);
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.recovered {
+  border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+}
+.recovered::before {
+  border-left: 15px solid rgba(0, 255, 0, 0.2);
+  border-right: 15px solid rgba(0, 255, 0, 0.2);
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.deaths {
+  border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+}
+.deaths:before {
+  border-left: 15px solid rgba(255, 0, 0, 0.2);
+  border-right: 15px solid rgba(255, 0, 0, 0.2);
+  background-color: rgba(255, 0, 0, 0.2);
+}
